@@ -19,19 +19,19 @@ app.post('/', (req, res) => {
             slots: [
                 {
                     id: 'nav',
-                    atf: true
+                    mode: 'atf'
                 },
                 {
                     id: '1',
-                    atf: false
+                    mode: 'btf'
                 },
                 {
                     id: '2',
-                    atf: false
+                    mode: 'both'
                 },
                 {
                     id: 'footer',
-                    atf: true
+                    mode: 'atf'
                 }
             ]
         }
