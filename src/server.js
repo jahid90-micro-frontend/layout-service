@@ -18,16 +18,20 @@ app.post('/', (req, res) => {
             layout: 'single-column-with-nav',
             slots: [
                 {
-                    id: 'nav'
+                    id: 'nav',
+                    atf: true
                 },
                 {
-                    id: '1'
+                    id: '1',
+                    atf: false
                 },
                 {
-                    id: '2'
+                    id: '2',
+                    atf: false
                 },
                 {
-                    id: 'footer'
+                    id: 'footer',
+                    atf: true
                 }
             ]
         }
