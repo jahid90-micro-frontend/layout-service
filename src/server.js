@@ -18,13 +18,16 @@ app.post('/', (req, res) => {
             layout: 'single-column-with-nav',
             slots: [
                 {
-                    id: 1
+                    id: 'nav'
                 },
                 {
-                    id: 2
+                    id: '1'
                 },
                 {
-                    id: 3
+                    id: '2'
+                },
+                {
+                    id: 'footer'
                 }
             ]
         }
@@ -37,4 +40,3 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.info(`server is up and running on port: ${port}`);
 });
-
