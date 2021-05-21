@@ -53,6 +53,25 @@ const layouts = {
                 mode: 'atf'
             }
         ]
+    },
+    '404': {
+        id: 404,
+        title: 'Not Found',
+        layout: 'single-column-with-nav',
+        slots: [
+            {
+                id: 'nav',
+                mode: 'atf'
+            },
+            {
+                id: '1',
+                mode: 'atf'
+            },
+            {
+                id: 'footer',
+                mode: 'atf'
+            }
+        ]
     }
 }
 
