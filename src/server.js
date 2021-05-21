@@ -1,40 +1,68 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const morgan = require('morgan');
 
 // Create the server
 const app = express();
 
 // Configuration
+app.use(morgan('tiny'));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+const layouts = {
+    '1': {
+        id: 1,
+        title: 'Home',
+        layout: 'single-column-with-nav',
+        slots: [
+            {
+                id: 'nav',
+                mode: 'atf'
+            },
+            {
+                id: '1',
+                mode: 'btf'
+            },
+            {
+                id: '2',
+                mode: 'both'
+            },
+            {
+                id: 'footer',
+                mode: 'atf'
+            }
+        ]
+    },
+    '2': {
+        id: 2,
+        title: 'About',
+        layout: 'single-column-with-nav',
+        slots: [
+            {
+                id: 'nav',
+                mode: 'atf'
+            },
+            {
+                id: '1',
+                mode: 'both'
+            },
+            {
+                id: 'footer',
+                mode: 'atf'
+            }
+        ]
+    }
+}
 
 // Routes
 app.post('/', (req, res) => {
 
+    console.log(`request for page: ${req.body.pageId}`);
+
     res.json({
-        page: {
-            id: req.body.pageId,
-            title: 'Home',
-            layout: 'single-column-with-nav',
-            slots: [
-                {
-                    id: 'nav',
-                    mode: 'atf'
-                },
-                {
-                    id: '1',
-                    mode: 'btf'
-                },
-                {
-                    id: '2',
-                    mode: 'both'
-                },
-                {
-                    id: 'footer',
-                    mode: 'atf'
-                }
-            ]
-        }
+        page: layouts[req.body.pageId]
     });
 
 });
