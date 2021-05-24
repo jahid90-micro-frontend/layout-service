@@ -19,19 +19,15 @@ const layouts = {
         slots: [
             {
                 id: 'nav',
-                mode: 'atf'
             },
             {
-                id: '1',
-                mode: 'btf'
+                id: '1'
             },
             {
                 id: '2',
-                mode: 'both'
             },
             {
-                id: 'footer',
-                mode: 'atf'
+                id: 'footer'
             }
         ]
     },
@@ -41,35 +37,13 @@ const layouts = {
         layout: 'single-column-with-nav',
         slots: [
             {
-                id: 'nav',
-                mode: 'atf'
+                id: 'nav'
             },
             {
                 id: '1',
-                mode: 'both'
             },
             {
-                id: 'footer',
-                mode: 'atf'
-            }
-        ]
-    },
-    '3': {
-        id: 3,
-        title: 'Counter',
-        layout: 'single-column-with-nav',
-        slots: [
-            {
-                id: 'nav',
-                mode: 'atf'
-            },
-            {
-                id: '1',
-                mode: 'atf'
-            },
-            {
-                id: 'footer',
-                mode: 'atf'
+                id: 'footer'
             }
         ]
     },
@@ -79,16 +53,13 @@ const layouts = {
         layout: 'single-column-with-nav',
         slots: [
             {
-                id: 'nav',
-                mode: 'atf'
+                id: 'nav'
             },
             {
-                id: '1',
-                mode: 'atf'
+                id: '1'
             },
             {
-                id: 'footer',
-                mode: 'atf'
+                id: 'footer'
             }
         ]
     },
@@ -98,16 +69,13 @@ const layouts = {
         layout: 'single-column-with-nav',
         slots: [
             {
-                id: 'nav',
-                mode: 'atf'
+                id: 'nav'
             },
             {
-                id: '1',
-                mode: 'atf'
+                id: '1'
             },
             {
-                id: 'footer',
-                mode: 'atf'
+                id: 'footer'
             }
         ]
     }
@@ -115,8 +83,6 @@ const layouts = {
 
 // Routes
 app.post('/', (req, res) => {
-
-    console.log(`request for page: ${req.body.pageId}`);
 
     res.json({
         page: layouts[req.body.pageId]
