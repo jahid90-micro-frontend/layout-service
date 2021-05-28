@@ -47,9 +47,25 @@ const layouts = {
             }
         ]
     },
+    '3': {
+        id: 3,
+        title: 'Minance App',
+        layout: 'single-column-with-nav',
+        slots: [
+            {
+                id: 'nav'
+            },
+            {
+                id: '1',
+            },
+            {
+                id: 'footer'
+            }
+        ]
+    },
     '4': {
         id: 4,
-        title: 'Todos',
+        title: 'Todos App',
         layout: 'single-column-with-nav',
         slots: [
             {
