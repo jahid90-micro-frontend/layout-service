@@ -16,14 +16,15 @@ app.use(bodyParser.json());
 // Routes
 app.post('/', (req, res) => {
 
+    const response = layouts[req.body.pageId];
+
+    console.log(`Request: {pageId: ${req.body.pageId}}`)
+    console.debug(`Response: ${JSON.stringify(response)}`);
+
     res.json({
-        page: layouts[req.body.pageId]
+        page: response
     });
 
 });
 
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.info(`server is up and running on port: ${port}`);
-});
+module.exports = app;
