@@ -2,6 +2,8 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const morgan = require('morgan');
 
+const { trace } = require('@jahiduls/lib-tracing');
+
 const layouts = require('./config/layouts');
 
 // Create the server
@@ -16,7 +18,7 @@ app.use(bodyParser.json());
 // Routes
 app.post('/', (req, res) => {
 
-    const response = layouts[req.body.pageId];
+    const response = tracedFetchPageLayout(req.body.pageId);
 
     console.log(`Request: {pageId: ${req.body.pageId}}`)
     console.debug(`Response: ${JSON.stringify(response)}`);
@@ -26,5 +28,8 @@ app.post('/', (req, res) => {
     });
 
 });
+
+const fetchPageLayout = (pageId) => layouts[pageId];
+const tracedFetchPageLayout = trace(fetchPageLayout, 'fetch=page-layout');
 
 module.exports = app;
