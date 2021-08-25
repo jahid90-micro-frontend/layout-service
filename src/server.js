@@ -30,6 +30,6 @@ app.post('/', (req, res) => {
 });
 
 const fetchPageLayout = (pageId) => layouts[pageId];
-const tracedFetchPageLayout = trace(fetchPageLayout, 'fetch=page-layout');
+const tracedFetchPageLayout = trace(fetchPageLayout, 'fetch-page-layout');
 
 module.exports = app;
